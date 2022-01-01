@@ -281,7 +281,7 @@ if(isset($_SESSION['Username'])){
                 //Insert new item data
                 $stmt = $con->prepare("INSERT  into items  (Name,Description,Price,Country_Made,StatusItem, Add_Date,item_Cat_Id,item_member_Id,Tags) 
                                        VALUES(?,?,?,?,?,NOW(),?,?,?)");
-                $stmt->execute(array($name, $desc, $price, $country,$status,$category,$member,$tags));
+                $stmt->execute(array($name, $desc, $price.' €', $country,$status,$category,$member,$tags));
                 //Echo succes message
                 $theMsg= '<div class="alert alert-success">' . $stmt->rowCount()  . ' Record Inserted</div>';
                 redirectHome($theMsg,'back');

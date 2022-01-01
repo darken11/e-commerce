@@ -489,13 +489,18 @@ if (isset($_SESSION['Username'])) {
 
 		    // Check if the Category Exist In DATABASE
 
+
+        //    $chekCategoryName=getAllFrom("*","categories","WHERE Name = {$_POST['name'] }","","Cat_ID");
+        //    if(!empty($chekCategoryName)){
+        //        echo $chekCategoryName;
+        //    }else{
          
                 $stmt = $con->prepare("UPDATE categories SET Name = ?, Description = ?, Parent = ?,  Ordering = ?, Visibility=? , Alow_Comment=?,  Alow_Ads=?  WHERE Cat_ID = ? ");
 				$stmt->execute(array($name, $description,$parent, $order, $visibility, $alowComment, $alowAds, $id));
 				//Echo succes message
 				$theMsg= '<div class="alert alert-success">' . $stmt->rowCount()  . ' Category Updated</div>';
 				redirectHome($theMsg, 'back');
-            
+        //    }
         }
         else {
 			$theMsg= '<div class="alert alert-danger"> Sorry you cant Browse this page Directly.</div>';
