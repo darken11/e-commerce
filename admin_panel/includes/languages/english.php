@@ -4,7 +4,7 @@ function lang($phrase){
 		//Nav bars
 		'HOME'				=>'Admin Area',
 		'CAT'				=>'Categories',
-		'ITEMS'				=>'Items',
+		'ITEMS'				=>'Products',
 		'MEMBERS'			=>'Members',
 		'STAT'				=>'Statistics',
 		'LOGS'				=>'Logs',

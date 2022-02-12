@@ -1,7 +1,7 @@
 <?php
 /*
 ============================================================
-==   Items Page
+==   Products Page
 ============================================================
 */
 ob_start(); //Output Buffering Start
@@ -23,14 +23,14 @@ if(isset($_SESSION['Username'])){
         if(! empty($items)){
 
     ?>
-		<h1 class="text-center">Manage Items</h1>
+		<h1 class="text-center">Manage Products</h1>
 		<div class="container">
 			<div class="table-responsive">
 
 				<table class="main-table text-center table table-bordered">
 					<tr>
 						<td>#ID</td>
-						<td>Name</td>
+						<td>Name Product</td>
 						<td>Description</td>
 						<td>Price</td>
 						<td>Country</td>
@@ -58,8 +58,8 @@ if(isset($_SESSION['Username'])){
 
 						
 						echo '<td>
-                            <a href="items.php?do=Edit&itemId=' . $rowItem['Item_ID'] . '" class="btn btn-warning"><i class="fa fa-edit"></i> Edit</a>
-                                <a href="items.php?do=Delete&itemId=' . $rowItem['Item_ID'] . '" class="btn btn-danger confirm"><i class="far fa-times-circle"></i> Delete</a>';
+                            <a href="items.php?do=Edit&itemId=' . $rowItem['Item_ID'] . '" class="btn btn-warning custom-btn"><i class="fa fa-edit"></i> </a>
+                                <a href="items.php?do=Delete&itemId=' . $rowItem['Item_ID'] . '" class="btn btn-danger  custom-btn confirm"><i class="far fa-times-circle"></i></a>';
                          if($rowItem['Approve'] == 0 ){
 					    echo '<a href="items.php?do=Approve&itemId=' . $rowItem['Item_ID'] . '"
                              class="btn btn-success activate">
@@ -92,7 +92,7 @@ if(isset($_SESSION['Username'])){
         
     }
     elseif($do == 'Add'){?>
-        <h1 class="text-center"> Add New Item</h1>
+        <h1 class="text-center"> Add New Product</h1>
 
         <div class="container">
             <form class="form-horizontal" action="?do=Insert" method="POST">
@@ -308,7 +308,7 @@ if(isset($_SESSION['Username'])){
 		$count = $stmt->rowCount();
 		//if rcount gretter than one i show the form with the value of it
 		if ($count > 0) {  ?>
-			<h1 class="text-center"> Edit Item</h1>
+			<h1 class="text-center"> Edit Product</h1>
 
 			<div class="container item-edit">
 				<form class="form-horizontal" action="?do=Update" method="POST">
